@@ -1,16 +1,20 @@
-{% load staticfiles %}
+{% extends 'layouts/base.html' %}
+{% load humanize %}
 
-<!doctype html>
-<html>
-    <head>
-        <meta utf-8>
-        <title>My Hello Web App Project</title>
-        <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
-    </head>
-    <body>
+{% block title %}Homepage - {{ block.super }}
+{% endblock %}
+
+
+{% block content %}
         <h1>Hello World!</h1>
-        <p>I am a basic website.</p>
-    
-    </body>
+<!-- here's the variable we are passing in -->
+<!--        <p>{% if number %}Number exists!{% endif %}</p>-->
+    <p>There are {{ number }} dog{{ number|pluralize }}!</p>
+<p>There are {{ number }} walrus{{ number|pluralize:"es" }}!</p>
 
-</html>
+<p>There are {{ number|apnumber }} dogs!</p>
+
+<p>This is my name: {{ thing }}</p>
+<p>This is my name: {{ thing|slugify }}</p>
+<p>This is my name: {{ thing|truncatewords:1 }}</p>
+ {% endblock %}
