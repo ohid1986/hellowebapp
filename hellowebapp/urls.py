@@ -15,9 +15,17 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from collection.backends import MyRegistrationView
+from collection import views
 
 urlpatterns = [
     url(r'', include('collection.urls')),
     
-    url(r'^admin/', admin.site.urls),
+    url(r'^accounts/register/$', 
+        MyRegistrationView.as_view(), name='registration_register'),
+    url(r'^accounts/create_thing/$', 
+        views.create_thing, name='registration_create_thing'),
+
+    url(r'^accounts/', include('registration.backends.simple.urls')),
+    url(r'^admin/', include(admin.site.urls)),
 ]

@@ -1,5 +1,6 @@
+/*.tgz
 db.sqlite3
-venv
+django_site
 *.pyc
 staticfiles
 .DS_STORE
@@ -12,7 +13,6 @@ staticfiles
 settings_local.py
 post-double.py
 labels
-node_modules
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -23,7 +23,7 @@ __pycache__/
 
 # Distribution / packaging
 .Python
-django_site/
+env/
 build/
 develop-eggs/
 dist/
@@ -43,3 +43,28 @@ var/
 #  before PyInstaller builds the exe, so as to inject date/other infos into it.
 *.manifest
 *.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
